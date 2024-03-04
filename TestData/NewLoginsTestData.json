@@ -1,0 +1,5 @@
+{
+  "${USERNAME};${PASSWORD}": {},
+  "standard_user01;secret_sauce01": {},
+  "standard_user;secret_sauce": {}
+}

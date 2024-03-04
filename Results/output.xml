@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-25T20:02:29.650882" rpa="false" schemaversion="5">
+<suite id="s1" name="AT01 loginToWebsite" source="C:\Users\softw\PycharmProjects\STLRobotAutomationProject\RobotAutomationBDD\AT01_loginToWebsite.robot">
+<test id="s1-t1" name="AT01_LoginToWebsite" line="13">
+<kw name="Given user on login page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-25T20:02:29.995086" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${LOGIN_PAGE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-25T20:02:29.995086" elapsed="4.001213"/>
+</kw>
+<status status="PASS" start="2024-02-25T20:02:29.994087" elapsed="4.003208"/>
+</kw>
+<kw name="Then enters valid username">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-25T20:02:34.001496" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-25T20:02:33.998290" elapsed="0.247033"/>
+</kw>
+<status status="PASS" start="2024-02-25T20:02:33.998290" elapsed="0.248517"/>
+</kw>
+<kw name="Then enters valid password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-25T20:02:34.247810" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-25T20:02:34.247810" elapsed="0.129284"/>
+</kw>
+<status status="PASS" start="2024-02-25T20:02:34.246807" elapsed="0.130287"/>
+</kw>
+<kw name="Then clicks on submit button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-25T20:02:34.379084" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-25T20:02:34.379084" elapsed="0.173034"/>
+</kw>
+<status status="PASS" start="2024-02-25T20:02:34.378087" elapsed="0.174031"/>
+</kw>
+<doc>This test case is to test login with BDD syntax</doc>
+<status status="PASS" start="2024-02-25T20:02:29.992115" elapsed="4.563030"/>
+</test>
+<status status="PASS" start="2024-02-25T20:02:29.653098" elapsed="4.906033"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="AT01 loginToWebsite">AT01 loginToWebsite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

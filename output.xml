@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-04T16:42:47.802274" rpa="false" schemaversion="5">
+<suite id="s1" name="DDT 02 SecnarioExamples" source="C:\Users\softw\PycharmProjects\STLRobotAutomationProject\RobotAutomationBDD\DDT_02_SecnarioExamples.robot">
+<kw name="user on login page" owner="login_resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:48.079965" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${LOGIN_PAGE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-04T16:42:48.079965" elapsed="3.342659"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-03-04T16:42:51.428148" elapsed="0.236815"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:42:48.078964" elapsed="3.585999"/>
+</kw>
+<test id="s1-t1" name="Scenario: userloginTest" line="18">
+<kw name="Login To Website">
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2024-03-04T16:42:51.670981" level="INFO">invalid</msg>
+<msg time="2024-03-04T16:42:51.670981" level="INFO">secret_sauce</msg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2024-03-04T16:42:51.669985" elapsed="0.001994"/>
+</kw>
+<kw name="enters valid username" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:51.675504" level="INFO">Typing text 'invalid' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:51.675504" elapsed="0.230043"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2024-03-04T16:42:51.673981" elapsed="0.232571"/>
+</kw>
+<kw name="enters valid password" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:51.907560" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:51.906552" elapsed="0.178258"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2024-03-04T16:42:51.906552" elapsed="0.178258"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-04T16:42:54.086846" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-04T16:42:52.085318" elapsed="2.001528"/>
+</kw>
+<kw name="clicks on submit button" owner="login_resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:54.088353" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:54.087350" elapsed="0.073765"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:42:54.087350" elapsed="0.073765"/>
+</kw>
+<arg>${INVALID}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-03-04T16:42:51.667976" elapsed="2.493139"/>
+</kw>
+<kw name="Login To Website">
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2024-03-04T16:42:54.162115" level="INFO">standard_user</msg>
+<msg time="2024-03-04T16:42:54.162115" level="INFO">invalid</msg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2024-03-04T16:42:54.162115" elapsed="0.000000"/>
+</kw>
+<kw name="enters valid username" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:54.163115" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:54.163115" elapsed="0.116391"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2024-03-04T16:42:54.163115" elapsed="0.116391"/>
+</kw>
+<kw name="enters valid password" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:54.280736" level="INFO">Typing text 'invalid' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:54.280736" elapsed="0.090067"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2024-03-04T16:42:54.279506" elapsed="0.092282"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-04T16:42:56.371858" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-04T16:42:54.371788" elapsed="2.000070"/>
+</kw>
+<kw name="clicks on submit button" owner="login_resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:56.372364" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:56.372364" elapsed="0.040215"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:42:56.372364" elapsed="0.040215"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${INVALID}</arg>
+<status status="PASS" start="2024-03-04T16:42:54.162115" elapsed="2.250464"/>
+</kw>
+<kw name="Login To Website">
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2024-03-04T16:42:56.413589" level="INFO">invalid</msg>
+<msg time="2024-03-04T16:42:56.413589" level="INFO">invalid</msg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2024-03-04T16:42:56.413589" elapsed="0.000000"/>
+</kw>
+<kw name="enters valid username" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:56.413589" level="INFO">Typing text 'invalid' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:56.413589" elapsed="0.093222"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2024-03-04T16:42:56.413589" elapsed="0.093222"/>
+</kw>
+<kw name="enters valid password" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:56.507808" level="INFO">Typing text 'invalid' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:56.507808" elapsed="0.082191"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2024-03-04T16:42:56.506811" elapsed="0.083188"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-04T16:42:58.591514" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-04T16:42:56.589999" elapsed="2.001515"/>
+</kw>
+<kw name="clicks on submit button" owner="login_resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:58.592021" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:58.592021" elapsed="0.044536"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:42:58.591514" elapsed="0.045043"/>
+</kw>
+<arg>${INVALID}</arg>
+<arg>${INVALID}</arg>
+<status status="PASS" start="2024-03-04T16:42:56.413589" elapsed="2.222968"/>
+</kw>
+<kw name="Login To Website">
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2024-03-04T16:42:58.637576" level="INFO"/>
+<msg time="2024-03-04T16:42:58.637576" level="INFO">secret_sauce</msg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2024-03-04T16:42:58.637576" elapsed="0.000000"/>
+</kw>
+<kw name="enters valid username" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:58.638563" level="INFO">Typing text '' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:58.637576" elapsed="0.071584"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2024-03-04T16:42:58.637576" elapsed="0.071584"/>
+</kw>
+<kw name="enters valid password" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:42:58.709160" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:42:58.709160" elapsed="0.093668"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2024-03-04T16:42:58.709160" elapsed="0.094672"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-04T16:43:00.804159" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-04T16:42:58.803832" elapsed="2.000327"/>
+</kw>
+<kw name="clicks on submit button" owner="login_resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:43:00.804159" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:43:00.804159" elapsed="0.047122"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:43:00.804159" elapsed="0.048121"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-03-04T16:42:58.636557" elapsed="2.215723"/>
+</kw>
+<kw name="Login To Website">
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2024-03-04T16:43:00.853468" level="INFO"/>
+<msg time="2024-03-04T16:43:00.853468" level="INFO"/>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2024-03-04T16:43:00.853468" elapsed="0.000000"/>
+</kw>
+<kw name="enters valid username" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:43:00.854972" level="INFO">Typing text '' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:43:00.854972" elapsed="0.086821"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2024-03-04T16:43:00.854972" elapsed="0.086821"/>
+</kw>
+<kw name="enters valid password" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:43:00.942793" level="INFO">Typing text '' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:43:00.942793" elapsed="0.109476"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2024-03-04T16:43:00.941793" elapsed="0.110476"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-04T16:43:03.052516" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-04T16:43:01.052269" elapsed="2.000247"/>
+</kw>
+<kw name="clicks on submit button" owner="login_resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:43:03.052516" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:43:03.052516" elapsed="0.056598"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:43:03.052516" elapsed="0.056598"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-03-04T16:43:00.852280" elapsed="2.256834"/>
+</kw>
+<kw name="Login To Website">
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2024-03-04T16:43:03.110115" level="INFO">standard_user</msg>
+<msg time="2024-03-04T16:43:03.110115" level="INFO"/>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2024-03-04T16:43:03.110115" elapsed="0.000000"/>
+</kw>
+<kw name="enters valid username" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:43:03.111113" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:43:03.110115" elapsed="0.143603"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2024-03-04T16:43:03.110115" elapsed="0.145110"/>
+</kw>
+<kw name="enters valid password" owner="login_resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:43:03.256232" level="INFO">Typing text '' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:43:03.255225" elapsed="0.093533"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2024-03-04T16:43:03.255225" elapsed="0.093533"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-04T16:43:05.349298" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-04T16:43:03.348758" elapsed="2.000540"/>
+</kw>
+<kw name="clicks on submit button" owner="login_resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-04T16:43:05.349298" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-04T16:43:05.349298" elapsed="0.134894"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:43:05.349298" elapsed="0.135895"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-03-04T16:43:03.109114" elapsed="2.376079"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:42:51.664963" elapsed="13.820230"/>
+</test>
+<kw name="Closing Browser" owner="login_resource" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-03-04T16:43:05.486707" elapsed="6.615554"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:43:05.485702" elapsed="6.616559"/>
+</kw>
+<status status="PASS" start="2024-03-04T16:42:47.804778" elapsed="24.297483"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="DDT 02 SecnarioExamples">DDT 02 SecnarioExamples</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
