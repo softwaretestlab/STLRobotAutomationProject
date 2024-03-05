@@ -1,340 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-04T16:42:47.802274" rpa="false" schemaversion="5">
-<suite id="s1" name="DDT 02 SecnarioExamples" source="C:\Users\softw\PycharmProjects\STLRobotAutomationProject\RobotAutomationBDD\DDT_02_SecnarioExamples.robot">
-<kw name="user on login page" owner="login_resource" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:48.079965" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>${LOGIN_PAGE_URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-03-04T16:42:48.079965" elapsed="3.342659"/>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-05T18:37:57.998457" rpa="false" schemaversion="5">
+<suite id="s1" name="AT01 GetRequest" source="C:\Users\softw\PycharmProjects\STLRobotAutomationProject\RobotFrameWorkBasics\AT01_GetRequest.robot">
+<test id="s1-t1" name="Get Request Test" line="17">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-03-05T18:37:58.509532" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-05T18:37:58.509532" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 05 Mar 2024 07:37:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1708378230&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=TeL4%2FAa%2F9YNGlO00vtOEHStRSJHlrNkpY%2Fi2N45fmic%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1708378230&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=TeL4%2FAa%2F9YNGlO00vtOEHStRSJHlrNkpY%2Fi2N45fmic%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5789', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '85f8719cab10a947-SYD', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-03-05T18:37:58.509532" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}</arg>
+<arg>params=page=${page_num}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-03-05T18:37:58.141125" elapsed="0.368407"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-03-04T16:42:51.428148" elapsed="0.236815"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-05T18:37:58.509532" elapsed="0.001001"/>
 </kw>
-<status status="PASS" start="2024-03-04T16:42:48.078964" elapsed="3.585999"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}[data][0][id]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-05T18:37:58.510533" elapsed="0.000000"/>
 </kw>
-<test id="s1-t1" name="Scenario: userloginTest" line="18">
-<kw name="Login To Website">
-<kw name="Log Many" owner="BuiltIn">
-<msg time="2024-03-04T16:42:51.670981" level="INFO">invalid</msg>
-<msg time="2024-03-04T16:42:51.670981" level="INFO">secret_sauce</msg>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>Logs the given messages as separate entries using the INFO level.</doc>
-<status status="PASS" start="2024-03-04T16:42:51.669985" elapsed="0.001994"/>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-03-05T18:37:58.511536" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>6</arg>
+<arg>${response.json()}[per_page]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-05T18:37:58.510533" elapsed="0.001003"/>
 </kw>
-<kw name="enters valid username" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:51.675504" level="INFO">Typing text 'invalid' into text field 'id=user-name'.</msg>
-<arg>id=user-name</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:51.675504" elapsed="0.230043"/>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-03-05T18:37:58.511536" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>12</arg>
+<arg>${response.json()}[total]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-05T18:37:58.511536" elapsed="0.000000"/>
 </kw>
-<arg>${username}</arg>
-<status status="PASS" start="2024-03-04T16:42:51.673981" elapsed="0.232571"/>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-03-05T18:37:58.512535" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>7</arg>
+<arg>${response.json()}[data][0][id]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-05T18:37:58.511536" elapsed="0.000999"/>
 </kw>
-<kw name="enters valid password" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:51.907560" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:51.906552" elapsed="0.178258"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2024-03-04T16:42:51.906552" elapsed="0.178258"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-03-04T16:42:54.086846" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-03-04T16:42:52.085318" elapsed="2.001528"/>
-</kw>
-<kw name="clicks on submit button" owner="login_resource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:54.088353" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:54.087350" elapsed="0.073765"/>
-</kw>
-<status status="PASS" start="2024-03-04T16:42:54.087350" elapsed="0.073765"/>
-</kw>
-<arg>${INVALID}</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-03-04T16:42:51.667976" elapsed="2.493139"/>
-</kw>
-<kw name="Login To Website">
-<kw name="Log Many" owner="BuiltIn">
-<msg time="2024-03-04T16:42:54.162115" level="INFO">standard_user</msg>
-<msg time="2024-03-04T16:42:54.162115" level="INFO">invalid</msg>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>Logs the given messages as separate entries using the INFO level.</doc>
-<status status="PASS" start="2024-03-04T16:42:54.162115" elapsed="0.000000"/>
-</kw>
-<kw name="enters valid username" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:54.163115" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
-<arg>id=user-name</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:54.163115" elapsed="0.116391"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2024-03-04T16:42:54.163115" elapsed="0.116391"/>
-</kw>
-<kw name="enters valid password" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:54.280736" level="INFO">Typing text 'invalid' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:54.280736" elapsed="0.090067"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2024-03-04T16:42:54.279506" elapsed="0.092282"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-03-04T16:42:56.371858" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-03-04T16:42:54.371788" elapsed="2.000070"/>
-</kw>
-<kw name="clicks on submit button" owner="login_resource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:56.372364" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:56.372364" elapsed="0.040215"/>
-</kw>
-<status status="PASS" start="2024-03-04T16:42:56.372364" elapsed="0.040215"/>
-</kw>
-<arg>${USERNAME}</arg>
-<arg>${INVALID}</arg>
-<status status="PASS" start="2024-03-04T16:42:54.162115" elapsed="2.250464"/>
-</kw>
-<kw name="Login To Website">
-<kw name="Log Many" owner="BuiltIn">
-<msg time="2024-03-04T16:42:56.413589" level="INFO">invalid</msg>
-<msg time="2024-03-04T16:42:56.413589" level="INFO">invalid</msg>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>Logs the given messages as separate entries using the INFO level.</doc>
-<status status="PASS" start="2024-03-04T16:42:56.413589" elapsed="0.000000"/>
-</kw>
-<kw name="enters valid username" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:56.413589" level="INFO">Typing text 'invalid' into text field 'id=user-name'.</msg>
-<arg>id=user-name</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:56.413589" elapsed="0.093222"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2024-03-04T16:42:56.413589" elapsed="0.093222"/>
-</kw>
-<kw name="enters valid password" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:56.507808" level="INFO">Typing text 'invalid' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:56.507808" elapsed="0.082191"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2024-03-04T16:42:56.506811" elapsed="0.083188"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-03-04T16:42:58.591514" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-03-04T16:42:56.589999" elapsed="2.001515"/>
-</kw>
-<kw name="clicks on submit button" owner="login_resource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:58.592021" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:58.592021" elapsed="0.044536"/>
-</kw>
-<status status="PASS" start="2024-03-04T16:42:58.591514" elapsed="0.045043"/>
-</kw>
-<arg>${INVALID}</arg>
-<arg>${INVALID}</arg>
-<status status="PASS" start="2024-03-04T16:42:56.413589" elapsed="2.222968"/>
-</kw>
-<kw name="Login To Website">
-<kw name="Log Many" owner="BuiltIn">
-<msg time="2024-03-04T16:42:58.637576" level="INFO"/>
-<msg time="2024-03-04T16:42:58.637576" level="INFO">secret_sauce</msg>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>Logs the given messages as separate entries using the INFO level.</doc>
-<status status="PASS" start="2024-03-04T16:42:58.637576" elapsed="0.000000"/>
-</kw>
-<kw name="enters valid username" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:58.638563" level="INFO">Typing text '' into text field 'id=user-name'.</msg>
-<arg>id=user-name</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:58.637576" elapsed="0.071584"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2024-03-04T16:42:58.637576" elapsed="0.071584"/>
-</kw>
-<kw name="enters valid password" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:42:58.709160" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:42:58.709160" elapsed="0.093668"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2024-03-04T16:42:58.709160" elapsed="0.094672"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-03-04T16:43:00.804159" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-03-04T16:42:58.803832" elapsed="2.000327"/>
-</kw>
-<kw name="clicks on submit button" owner="login_resource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:43:00.804159" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:43:00.804159" elapsed="0.047122"/>
-</kw>
-<status status="PASS" start="2024-03-04T16:43:00.804159" elapsed="0.048121"/>
-</kw>
-<arg>${EMPTY}</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-03-04T16:42:58.636557" elapsed="2.215723"/>
-</kw>
-<kw name="Login To Website">
-<kw name="Log Many" owner="BuiltIn">
-<msg time="2024-03-04T16:43:00.853468" level="INFO"/>
-<msg time="2024-03-04T16:43:00.853468" level="INFO"/>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>Logs the given messages as separate entries using the INFO level.</doc>
-<status status="PASS" start="2024-03-04T16:43:00.853468" elapsed="0.000000"/>
-</kw>
-<kw name="enters valid username" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:43:00.854972" level="INFO">Typing text '' into text field 'id=user-name'.</msg>
-<arg>id=user-name</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:43:00.854972" elapsed="0.086821"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2024-03-04T16:43:00.854972" elapsed="0.086821"/>
-</kw>
-<kw name="enters valid password" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:43:00.942793" level="INFO">Typing text '' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:43:00.942793" elapsed="0.109476"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2024-03-04T16:43:00.941793" elapsed="0.110476"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-03-04T16:43:03.052516" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-03-04T16:43:01.052269" elapsed="2.000247"/>
-</kw>
-<kw name="clicks on submit button" owner="login_resource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:43:03.052516" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:43:03.052516" elapsed="0.056598"/>
-</kw>
-<status status="PASS" start="2024-03-04T16:43:03.052516" elapsed="0.056598"/>
-</kw>
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
-<status status="PASS" start="2024-03-04T16:43:00.852280" elapsed="2.256834"/>
-</kw>
-<kw name="Login To Website">
-<kw name="Log Many" owner="BuiltIn">
-<msg time="2024-03-04T16:43:03.110115" level="INFO">standard_user</msg>
-<msg time="2024-03-04T16:43:03.110115" level="INFO"/>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>Logs the given messages as separate entries using the INFO level.</doc>
-<status status="PASS" start="2024-03-04T16:43:03.110115" elapsed="0.000000"/>
-</kw>
-<kw name="enters valid username" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:43:03.111113" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
-<arg>id=user-name</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:43:03.110115" elapsed="0.143603"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2024-03-04T16:43:03.110115" elapsed="0.145110"/>
-</kw>
-<kw name="enters valid password" owner="login_resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:43:03.256232" level="INFO">Typing text '' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:43:03.255225" elapsed="0.093533"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2024-03-04T16:43:03.255225" elapsed="0.093533"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-03-04T16:43:05.349298" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-03-04T16:43:03.348758" elapsed="2.000540"/>
-</kw>
-<kw name="clicks on submit button" owner="login_resource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-03-04T16:43:05.349298" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-04T16:43:05.349298" elapsed="0.134894"/>
-</kw>
-<status status="PASS" start="2024-03-04T16:43:05.349298" elapsed="0.135895"/>
-</kw>
-<arg>${USERNAME}</arg>
-<arg>${EMPTY}</arg>
-<status status="PASS" start="2024-03-04T16:43:03.109114" elapsed="2.376079"/>
-</kw>
-<status status="PASS" start="2024-03-04T16:42:51.664963" elapsed="13.820230"/>
+<status status="PASS" start="2024-03-05T18:37:58.140133" elapsed="0.372402"/>
 </test>
-<kw name="Closing Browser" owner="login_resource" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-03-04T16:43:05.486707" elapsed="6.615554"/>
+<test id="s1-t2" name="Post Request Test" line="26">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-05T18:37:58.513535" level="INFO">&amp;{req_body} = { name=john | job=test manager }</msg>
+<var>&amp;{req_body}</var>
+<arg>name=${expectedname}</arg>
+<arg>job=${expectedjob}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-05T18:37:58.512535" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2024-03-04T16:43:05.485702" elapsed="6.616559"/>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-03-05T18:37:59.446141" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '39', 'Content-Type': 'application/json'} 
+ body=b'{"name": "john", "job": "test manager"}' 
+ </msg>
+<msg time="2024-03-05T18:37:59.446141" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 05 Mar 2024 07:37:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '86', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1709624279&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=mAohbwENN8fg%2BlMvTf4qShd5fAlzxkq6fJYFzYVlU1I%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1709624279&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=mAohbwENN8fg%2BlMvTf4qShd5fAlzxkq6fJYFzYVlU1I%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"56-5+cQhcEUAmELGf9pEgc5IE9r7uI"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '85f8719f2ead5c0d-SYD'} 
+ body={"name":"john","job":"test manager","id":"199","createdAt":"2024-03-05T07:37:59.314Z"} 
+ </msg>
+<msg time="2024-03-05T18:37:59.447141" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-03-05T18:37:58.513535" elapsed="0.933606"/>
 </kw>
-<status status="PASS" start="2024-03-04T16:42:47.804778" elapsed="24.297483"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-05T18:37:59.447141" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-03-05T18:37:59.447141" level="INFO">False</msg>
+<arg>${response.json()}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-03-05T18:37:59.447141" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-03-05T18:37:59.448644" level="INFO">${name} = john</msg>
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-03-05T18:37:59.447141" elapsed="0.001503"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${expectedname}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-05T18:37:59.448644" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-03-05T18:37:59.449647" level="INFO">${job} = test manager</msg>
+<var>${job}</var>
+<arg>${response.json()}</arg>
+<arg>job</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-03-05T18:37:59.448644" elapsed="0.001003"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${expectedjob}</arg>
+<arg>${job}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-05T18:37:59.449647" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-03-05T18:37:58.512535" elapsed="0.937112"/>
+</test>
+<test id="s1-t3" name="Put Request Test" line="36">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-05T18:37:59.450650" level="INFO">&amp;{req_body} = { name=update_test | job=resident }</msg>
+<var>&amp;{req_body}</var>
+<arg>name=update_test</arg>
+<arg>job=resident</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-05T18:37:59.450650" elapsed="0.000000"/>
+</kw>
+<kw name="PUT" owner="RequestsLibrary">
+<msg time="2024-03-05T18:38:00.315538" level="INFO">PUT Request : url=https://reqres.in/api/users+/2 
+ path_url=/api/users+/2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '42', 'Content-Type': 'application/json'} 
+ body=b'{"name": "update_test", "job": "resident"}' 
+ </msg>
+<msg time="2024-03-05T18:38:00.315538" level="INFO">PUT Response : url=https://reqres.in/api/users+/2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 05 Mar 2024 07:38:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1709624280&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=yfv%2FhjT0GdvU65KaBDFhOQS13rl1LyXo92jOLkjAwfo%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1709624280&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=yfv%2FhjT0GdvU65KaBDFhOQS13rl1LyXo92jOLkjAwfo%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4e-0PTBCiJCeKIaT8SJey900+YRuhE"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '85f871a4baeeab07-SYD', 'Content-Encoding': 'gzip'} 
+ body={"name":"update_test","job":"resident","updatedAt":"2024-03-05T07:38:00.194Z"} 
+ </msg>
+<msg time="2024-03-05T18:38:00.316539" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}+/2</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a PUT request.</doc>
+<status status="PASS" start="2024-03-05T18:37:59.450650" elapsed="0.866889"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-05T18:38:00.317539" level="INFO">{'name': 'update_test', 'job': 'resident', 'updatedAt': '2024-03-05T07:38:00.194Z'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-05T18:38:00.317539" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-03-05T18:38:00.318539" level="INFO">False</msg>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-03-05T18:38:00.317539" elapsed="0.001000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-03-05T18:38:00.319041" level="INFO">${name} = update_test</msg>
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-03-05T18:38:00.318539" elapsed="0.000502"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${updated_expectedname}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-05T18:38:00.319041" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-03-05T18:38:00.319041" level="INFO">False</msg>
+<arg>${response.json()}</arg>
+<arg>job</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-03-05T18:38:00.319041" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-03-05T18:38:00.320044" level="INFO">${job} = resident</msg>
+<var>${job}</var>
+<arg>${response.json()}</arg>
+<arg>job</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-03-05T18:38:00.319041" elapsed="0.001003"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${updated_expectedjob}</arg>
+<arg>${job}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-05T18:38:00.320044" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-03-05T18:37:59.449647" elapsed="0.870397"/>
+</test>
+<test id="s1-t4" name="Delete Request Test" line="49">
+<kw name="DELETE" owner="RequestsLibrary">
+<msg time="2024-03-05T18:38:01.198909" level="INFO">DELETE Request : url=https://reqres.in/api/users+/2 
+ path_url=/api/users+/2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-03-05T18:38:01.198909" level="INFO">DELETE Response : url=https://reqres.in/api/users+/2 
+ status=204, reason=No Content 
+ headers={'Date': 'Tue, 05 Mar 2024 07:38:01 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1709624281&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=OVaJJpfMAJb8fxq%2FkvMImizxPr%2Bucy7DneqgGdKAAlI%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1709624281&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=OVaJJpfMAJb8fxq%2FkvMImizxPr%2Bucy7DneqgGdKAAlI%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '85f871aa2d5a556f-SYD'} 
+ body=None 
+ </msg>
+<msg time="2024-03-05T18:38:01.200278" level="INFO">${delete_resp} = &lt;Response [204]&gt;</msg>
+<var>${delete_resp}</var>
+<arg>${base_url}+/2</arg>
+<arg>expected_status=204</arg>
+<doc>Sends a DELETE request.</doc>
+<status status="PASS" start="2024-03-05T18:38:00.321046" elapsed="0.879232"/>
+</kw>
+<status status="PASS" start="2024-03-05T18:38:00.320044" elapsed="0.880234"/>
+</test>
+<status status="PASS" start="2024-03-05T18:37:58.000620" elapsed="3.199658"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="DDT 02 SecnarioExamples">DDT 02 SecnarioExamples</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="AT01 GetRequest">AT01 GetRequest</stat>
 </suite>
 </statistics>
 <errors>

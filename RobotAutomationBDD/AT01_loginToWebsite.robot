@@ -14,6 +14,7 @@ ${BROWSER}              chrome
 *** Test Cases ***
 ddtTest
     [Documentation]    This test case is to test login with BDD syntax
+    [Tags]    SmokeTest
     Given user on login page
     Then enters valid username
     Then enters valid password

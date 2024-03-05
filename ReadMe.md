@@ -9,3 +9,6 @@ https://docs.robotframework.org/docs/variables
 
 DDT:
 https://docs.robotframework.org/docs/testcase_styles/datadriven
+
+API Testing:
+https://docs.robotframework.org/docs/different_libraries/requests
